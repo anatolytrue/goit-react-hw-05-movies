@@ -8,3 +8,18 @@ export async function fetchMoviesQuery(query) {
     const moviesInfo = data.results.map(({ id, original_title, poster_path }) => ({ id, original_title, poster_path }));
     return moviesInfo
 }
+
+export async function fetchMovieDetails(movieId) {
+    const { data } = await axios.get(`/movie/${movieId}?api_key=${KEY}&language=uk`);
+
+    const dataMovies = {
+        originalTitle: data.original_title,
+        title: data.title,
+        genres: data.genres,
+        overview: data.overview,
+        poster: data.poster_path,
+        releaseDate: data.release_date.slice(0, 4),
+        voteAverage: data.vote_average,
+    };
+    return dataMovies;
+}

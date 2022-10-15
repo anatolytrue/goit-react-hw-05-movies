@@ -1,6 +1,13 @@
+import {useParams} from 'react-router-dom'
+import { fetchMovieDetails } from 'movieAPI';
+
 const MoviesDetailsPage = () => {
+    const { id } = useParams();
+    const movie = fetchMovieDetails(id)
     return <div>
-        Home
+        <h2>Now showing product - {movie.name} with id - {id}</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Neque, esse hic quas quam unde quaerat.</p>
     </div>
 };
 
