@@ -1,13 +1,15 @@
-import NavBar from 'components/NavBar/NavBar'
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import AppBar from 'components/AppBar/AppBar';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 
 export default function SharedLayout() {
   return (
-      <>
-          <NavBar />
-          <Outlet/>
-          <footer>Copyright 2022</footer>
-      </>
-  )
-}
+    <>
+      <AppBar />
+      <Suspense>
+        <Outlet />
+      </Suspense>
+      <footer>Copyright 2022</footer>
+    </>
+  );
+};

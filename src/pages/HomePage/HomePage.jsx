@@ -1,9 +1,11 @@
+import MoviesList from "components/MoviesList/MoviesList"
 
-export default function HomePage(props) {
+
+export default function HomePage() {
     return (
         <>
-            <div>Home Page</div>
-            {/* <Posts/> */}
+            <h1>Trending today</h1>
+            <MoviesList/>
         </>
     )
 }

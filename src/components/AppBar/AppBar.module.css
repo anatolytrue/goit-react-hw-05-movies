@@ -1,0 +1,16 @@
+
+
+.link {
+    color: tomato;
+        text-decoration: none;
+        margin: 10px;
+}
+
+.active {
+    color: blue;
+}
+
+:hover:not(.active),
+:focus:not(.active) {
+    color: black;
+}

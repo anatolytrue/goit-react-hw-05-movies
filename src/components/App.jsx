@@ -1,35 +1,41 @@
-import './App.css'
-import { Route, Routes } from 'react-router-dom'
-import HomePage from 'pages/HomePage/HomePage';
-import PostsPage from 'pages/PostsPage/PostsPage';
-import MyBooksPage from 'pages/MyBooksPage/MyBooksPage';
-// import NavBar from './NavBar/NavBar';
-import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
-import SinglePostPage from 'pages/SinglePostPage/SinglePostPage';
-import ProductPage from 'pages/ProductPage/ProductPage';
-import ListPage from 'pages/ProductPage/ListPage/ListPage';
-import AddPage from 'pages/ProductPage/AddPage/AddPage';
-import SearchPage from 'pages/ProductPage/SearchPage/SearchPage';
+import css from './App.module.css';
+import { lazy } from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
+// import HomePage from 'pages/HomePage/HomePage';
+// import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 import SharedLayout from './SharedLayout/SharedLayout';
+// import MoviesPage from 'pages/MoviesPage/MoviesPage';
+// import MoviesDetailsPage from 'pages/MovieDetailsPage/MovieDetailsPage';
+
+const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
+const MoviesDetailsPage = lazy(() => import('../pages/MovieDetailsPage/MovieDetailsPage'));
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage"));
 
 function App() {
   return (
-    <div className="App">
-      {/* <NavBar/> */}
+    <div className={css.app}>
+
       <Routes>
-        <Route path='/' element={<SharedLayout/>}>
-          <Route index element={<HomePage />} />
-          <Route path='/posts' element={<PostsPage />} />
-          <Route path='/posts/:id' element={<SinglePostPage />} />
-          <Route path='/my-books' element={<MyBooksPage />} />
-          <Route path='/products' element={<ProductPage />}>
-            <Route path='list' element={<ListPage />} />
-            <Route path='add' element={<AddPage />} />
-            <Route path='search' element={<SearchPage />}/>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Navigate to="home" />} />
+          <Route path="home" element={<HomePage />} />
+          <Route path="home/:id" element={<MoviesDetailsPage />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
-          <Route path='*' element={<NotFoundPage />} />
-        </Route>
-      </Routes>
+
+          <Route path="movies" element={<MoviesPage />} />
+          <Route path="movies/:id" element={<MoviesDetailsPage />}>
+            <Route path="cast" element={<Cast  />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+
     </div>
   );
 }

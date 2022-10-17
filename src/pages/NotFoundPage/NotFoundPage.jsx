@@ -8,12 +8,13 @@ export default function NotFoundPage() {
             <h2>Maybe those links can help you:</h2>
             <ul>
                 <li>
-                    <Link to={"/post"}>Posts</Link>
+                    <Link to={"/"}>Home</Link>
                 </li>
                 <li>
-                    <Link to={"/my-books"}>My books</Link>
+                    <Link to={"/movies"}>Movies</Link>
                 </li>
             </ul>
         </div>
     )
 }
+
