@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import HomePage from 'pages/HomePage/HomePage';
 import PostsPage from 'pages/PostsPage/PostsPage';
 import MyBooksPage from 'pages/MyBooksPage/MyBooksPage';
-import NavBar from './NavBar/NavBar';
+// import NavBar from './NavBar/NavBar';
 import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 import SinglePostPage from 'pages/SinglePostPage/SinglePostPage';
 import ProductPage from 'pages/ProductPage/ProductPage';
