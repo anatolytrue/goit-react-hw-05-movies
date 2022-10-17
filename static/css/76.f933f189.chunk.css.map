@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/76.f933f189.chunk.css","mappings":"AAAA,yBACI,YAAa,CACb,6BAA8B,CAC9B,SACJ","sources":["components/Cast/Cast.module.css"],"sourcesContent":[".creditsList{\n    display: flex;\n    justify-content: space-between;\n    padding: 0;\n}"],"names":[],"sourceRoot":""}
