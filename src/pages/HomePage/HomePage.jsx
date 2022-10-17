@@ -1,7 +1,9 @@
-const HomePage = () => {
-    return <div>
-        Home
-    </div>
-};
 
-export default HomePage;
+export default function HomePage(props) {
+    return (
+        <>
+            <div>Home Page</div>
+            {/* <Posts/> */}
+        </>
+    )
+}

@@ -1,15 +1,13 @@
-import { Outlet, Link } from "react-router-dom";
+import NavBar from 'components/NavBar/NavBar'
+import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 export default function SharedLayout() {
-    return (
-        <header>
-            <nav>
-                <Link to="/">Home</Link>
-                <Link to="movies">Movies</Link>
-            </nav>
-            <main>
-                <Outlet />
-            </main>
-        </header>
-    );
+  return (
+      <>
+          <NavBar />
+          <Outlet/>
+          <footer>Copyright 2022</footer>
+      </>
+  )
 }
