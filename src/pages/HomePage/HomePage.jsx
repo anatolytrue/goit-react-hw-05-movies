@@ -4,7 +4,7 @@ import MoviesList from "components/MoviesList/MoviesList"
 export default function HomePage() {
     return (
         <>
-            <h1>Trending today</h1>
+            <h2>Trending today</h2>
             <MoviesList/>
         </>
     )

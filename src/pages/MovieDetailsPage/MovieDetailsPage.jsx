@@ -1,7 +1,8 @@
 
 import { fetchMovieDetails } from '../../services/moviesAPI';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import Loader from 'components/Loader/Loader';
 
 const MoviesDetailsPage = () => {
 
@@ -68,7 +69,10 @@ const MoviesDetailsPage = () => {
                     </Link>
                 </li>
             </ul>
-            <Outlet />
+            <Suspense fallback={<Loader/>}>
+                <Outlet />
+            </Suspense>
+            
         </div>
     );
 };
