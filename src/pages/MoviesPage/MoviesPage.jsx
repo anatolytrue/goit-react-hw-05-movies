@@ -10,7 +10,7 @@ export default function MoviesPage() {
     };
     const handleSubmit = e => {
         e.preventDefault();
-        e.target.reset();
+        // e.target.reset();
         setQuery(inputSearch);
     };
 
